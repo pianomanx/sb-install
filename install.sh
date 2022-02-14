@@ -47,8 +47,6 @@ function checkIfSudo() {
 
 }
 
-echo "alias sb='docker run -it --network=sudobox_private --name sb-cli sudobox/sb-cli'" >~/.bash_aliases
-
 function downloadDependencies() {
     echo -e "\e[34m\e[1mInstalling and ensuring your system is upto date"
     sudo apt-get -qq update -y && sudo apt-get -qq upgrade -y
