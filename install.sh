@@ -99,8 +99,8 @@ function dockernetworkcheck() {
     fi
 }
 function installsbcli() {
-    alias sb='docker run -it --rm --network=sudobox_private --name sb-cli ghcr.io/sudobox/sb-cli'
-    echo "alias sb='docker run -it --network=sudobox_private --rm --name sb-cli ghcr.io/sudobox/sb-cli && clear'" >>~/.bash_aliases
+    alias sb='docker run -it --rm --network=sudobox_private --name sb-cli ghcr.io/sudobox-io/sb-cli'
+    echo "alias sb='docker run -it --network=sudobox_private --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
     echo -e "\e[34m\e[1mCreating SudoBox CLI Container"
     docker run -it --network=sudobox_private --name sb-cli sudobox/sb-cli
     echo -e "\e[32mCreated SudoBox CLI Container"
@@ -111,7 +111,7 @@ function installsbbackend() {
     echo 'version: "3.5"
 services:
   sb_backend:
-    image: ghcr.io/sudobox/sb-backend
+    image: ghcr.io/sudobox-io/sb-backend
     container_name: sb-backend
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
