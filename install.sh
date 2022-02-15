@@ -39,7 +39,6 @@ function checkIfSudo() {
         dockernetworkcheckpublic
         dockernetworkcheck
         installsbbackend
-        runcontainers
         installsbcli
         echo "Finished installing all Dependencies, Moving to CLI Questions..."
         echo "You can run SudoBox CLI at anytime using 'sb'"
@@ -136,23 +135,7 @@ networks:
     driver: bridge
     external: true' >sb-backend.yml
     echo -e "\e[32mCreated SudoBox backend compose file"
-}
-
-function runcontainers() {
-    containerdbcheck=$(docker ps -a | grep --only-matching sb-database)
-    if [[ "$containerdbcheck" == "sb-database" ]]; then
-        echo "SudoBox database Container exists removing Container..."
-        docker rm sb-database
-    else
-        containerbackcheck=$(docker ps -a | grep --only-matching sb-backend)
-        if [[ "$containerbackcheck" == "sb-backend" ]]; then
-            echo "SudoBox backend Container exists removing Container..."
-            docker rm sb-backend
-        else
-            docker-compose -f sb-database.yml up -d
-            docker-compose -f sb-backend.yml up -d
-        fi
-    fi
+    docker-compose -f sb-backend.yml up -d
 }
 
 installation
