@@ -4,7 +4,7 @@
 #
 clear
 function installation () {
-    echo -e "\e[94m--------------- Sudobox Installer ---------------"
+    echo -e "\e[36m--------------- Sudobox Installer ---------------"
     echo "  Pre Installer for SudoBox.io "
     echo "  Version 0.0.1 "
     echo "  All documentation can be found at https://docs.sudobox.io"
