@@ -77,6 +77,7 @@ function createdir () {
     mkdir -p /opt/sudobox/configs
     mkdir -p /opt/sudobox/appdata
     mkdir -p /opt/sudobox/compose
+    touch /opt/sudobox/configs/cli-settings.yml 
     echo -e "\e[39mCreated SudoBox Directories"
 
 }
@@ -101,11 +102,12 @@ function dockernetworkcheck () {
     fi
 }
 function installsbcli () {
-    alias sb='docker run -it --rm --network=sudobox_private --name sb-cli ghcr.io/sudobox-io/sb-cli'
-    echo "alias sb='docker run -it --network=sudobox_private --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
-    echo "alias sudobox='docker run -it --network=sudobox_private --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
+    alias sudobox='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'
+    alias sb='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'
+    echo "alias sudobox='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
+    echo "alias sb='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
     echo -e "\e[39mCreating SudoBox CLI Container"
-    docker run -it --network=sudobox_private --name sb-cli sudobox/sb-cli
+    docker run -it --network=sudobox_private --name sb-cli ghcr.io/sudobox-io/sb-cli
     echo -e "\e[39mCreated SudoBox CLI Container"
 }
 
