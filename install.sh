@@ -40,8 +40,11 @@ function checkIfSudo () {
         dockernetworkcheck
         installsbbackend
         installsbcli
+        echo ""
+        echo ""
         echo "Finished installing all Dependencies, Moving to CLI Questions..."
-        echo -e "\e[39mYou can run SudoBox CLI at anytime using 'sb'"
+        echo -e "\e[1mYou can run SudoBox CLI at anytime using 'sb'"
+        echo ""
     fi
 
 }
