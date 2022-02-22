@@ -4,7 +4,7 @@
 #
 clear
 function installation () {
-    echo -e "\e[34m\e[1m--------------- Sudobox Installer ---------------"
+    echo -e "\e[94m--------------- Sudobox Installer ---------------"
     echo "  Pre Installer for SudoBox.io "
     echo "  Version 0.0.1 "
     echo "  All documentation can be found at https://docs.sudobox.io"
@@ -47,14 +47,14 @@ function checkIfSudo () {
 }
 
 function downloadDependencies () {
-    echo -e "\e[34m\e[1mInstalling and ensuring your system is upto date"
+    echo -e "\e[39mInstalling and ensuring your system is upto date"
     sudo apt-get -qq update -y && sudo apt-get -qq upgrade -y
-    echo -e "\e[34m\e[1mProceeding with installation dependencies..."
+    echo -e "\e[39mProceeding with installation dependencies..."
 
     if [[ $(which docker) && $(docker --version) ]]; then
-        echo -e "\e[32mDocker Installed, Skipping..."
+        echo -e "\e[39mDocker Installed, Skipping..."
     else
-        echo -e "\e[34m\e[1mInstalling Docker"
+        echo -e "\e[39mInstalling Docker"
         sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
         sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
@@ -62,9 +62,9 @@ function downloadDependencies () {
     fi
 
     if [[ $(which docker-compose) ]]; then
-        echo -e "\e[32mDocker-Compose installed, Skipping..."
+        echo -e "\e[39mDocker-Compose installed, Skipping..."
     else
-        echo -e "\e[34m\e[1mInstalling docker-compose"
+        echo -e "\e[39mInstalling docker-compose"
         sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
         sudo chmod +x /usr/local/bin/docker-compose
     fi
@@ -74,35 +74,35 @@ function createdir () {
     mkdir -p /opt/sudobox/configs
     mkdir -p /opt/sudobox/appdata
     mkdir -p /opt/sudobox/compose
-    echo -e "\e[34m\e[1mCreated SudoBox Directories"
+    echo -e "\e[39mCreated SudoBox Directories"
 
 }
 function dockernetworkcheckpublic () {
     donetcheck=$(docker network ls | grep --only-matching sudobox | head -1)
     if [[ "$donetcheck" == "sudobox" ]]; then
-        echo -e "\e[32mDocker Network ( sudobox )Exists, Skipping..."
+        echo -e "\e[39mDocker Network ( sudobox )Exists, Skipping..."
     else
-        echo -e "\e[34m\e[1mCreating Docker Network sudobox"
+        echo -e "\e[39mCreating Docker Network sudobox"
         docker network create sudobox
-        echo -e "\e[32mCreated Docker Network sudobox"
+        echo -e "\e[39mCreated Docker Network sudobox"
     fi
 }
 function dockernetworkcheck () {
     donetcheck=$(docker network ls | grep --only-matching sudobox_private)
     if [[ "$donetcheck" == "sudobox_private" ]]; then
-        echo -e "\e[32mDocker Network ( sudobox_private )Exists, Skipping..."
+        echo -e "\e[39mDocker Network ( sudobox_private )Exists, Skipping..."
     else
-        echo -e "\e[34m\e[1mCreating Docker Network sudobox_private"
+        echo -e "\e[39mCreating Docker Network sudobox_private"
         docker network create sudobox_private
-        echo -e "\e[32mCreated Docker Network sudobox_private"
+        echo -e "\e[39mCreated Docker Network sudobox_private"
     fi
 }
 function installsbcli () {
     alias sb='docker run -it --rm --network=sudobox_private --name sb-cli ghcr.io/sudobox-io/sb-cli'
     echo "alias sb='docker run -it --network=sudobox_private --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
-    echo -e "\e[34m\e[1mCreating SudoBox CLI Container"
+    echo -e "\e[39mCreating SudoBox CLI Container"
     docker run -it --network=sudobox_private --name sb-cli sudobox/sb-cli
-    echo -e "\e[32mCreated SudoBox CLI Container"
+    echo -e "\e[39mCreated SudoBox CLI Container"
 }
 
 function installsbbackend () {
@@ -134,7 +134,7 @@ networks:
   sudobox_private:
     driver: bridge
     external: true' >sb-backend.yml
-    echo -e "\e[32mCreated SudoBox backend compose file"
+    echo -e "\e[39mCreated SudoBox backend compose file"
     docker-compose -f sb-backend.yml up -d
     echo "Created SudoBox backend Continaer"
 }
