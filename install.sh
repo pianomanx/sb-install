@@ -43,7 +43,7 @@ function checkIfSudo () {
         echo ""
         echo ""
         echo "Finished installing all Dependencies, Moving to CLI Questions..."
-        echo -e "\e[1mYou can run SudoBox CLI at anytime using 'sb'"
+        echo -e "\e[1mYou can run SudoBox CLI at anytime using 'sb' or 'sudobox'"
         echo ""
     fi
 
@@ -103,6 +103,7 @@ function dockernetworkcheck () {
 function installsbcli () {
     alias sb='docker run -it --rm --network=sudobox_private --name sb-cli ghcr.io/sudobox-io/sb-cli'
     echo "alias sb='docker run -it --network=sudobox_private --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
+    echo "alias sudobox='docker run -it --network=sudobox_private --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
     echo -e "\e[39mCreating SudoBox CLI Container"
     docker run -it --network=sudobox_private --name sb-cli sudobox/sb-cli
     echo -e "\e[39mCreated SudoBox CLI Container"
