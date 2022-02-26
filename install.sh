@@ -77,7 +77,7 @@ function createdir () {
     mkdir -p /opt/sudobox/configs
     mkdir -p /opt/sudobox/appdata
     mkdir -p /opt/sudobox/compose
-    touch /opt/sudobox/configs/cli-settings.yml 
+    touch /opt/sudobox/configs/cli-settings.yml # Sudobox CLI Config file storing settings
     echo -e "\e[39mCreated SudoBox Directories"
 
 }
@@ -87,7 +87,7 @@ function dockernetworkcheckpublic () {
         echo -e "\e[39mDocker Network ( sudobox )Exists, Skipping..."
     else
         echo -e "\e[39mCreating Docker Network sudobox"
-        docker network create sudobox
+        docker network create sudobox 
         echo -e "\e[39mCreated Docker Network sudobox"
     fi
 }
@@ -107,7 +107,7 @@ function installsbcli () {
     echo "alias sudobox='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
     echo "alias sb='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
     echo -e "\e[39mCreating SudoBox CLI Container"
-    docker run -it --network=sudobox_private --name sb-cli ghcr.io/sudobox-io/sb-cli
+    docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --name sb-cli ghcr.io/sudobox-io/sb-cli
     echo -e "\e[39mCreated SudoBox CLI Container"
 }
 
