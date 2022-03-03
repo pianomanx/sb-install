@@ -26,8 +26,6 @@ function installation () {
 #     *) echo -e "\e[91mInvalid Option" ;;
     sleep 10
     checkIfSudo
-
-    esac
 }
 
 function checkIfSudo () {
