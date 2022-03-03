@@ -15,15 +15,17 @@ function installation () {
     echo "     - Create Docker Networks: sudobox & sudobox_private"
     echo "     - Install the SudoBox CLI, Backend & Database Containers"
     echo ""
-    echo "     y) Would you like to continue?"
-    echo "     e) Exit "
+    echo "     This script will run automatically in 10 seconds. Please exit if you wish to abort!"
+    echo ""
     echo ""
 
-    read n
-    case $n in
-    y) checkIfSudo ;;
-    e) exit ;;
-    *) echo -e "\e[91mInvalid Option" ;;
+#     read n
+#     case $n in
+#     y) checkIfSudo ;;
+#     e) exit ;;
+#     *) echo -e "\e[91mInvalid Option" ;;
+    sleep 10
+    checkIfSudo
 
     esac
 }
