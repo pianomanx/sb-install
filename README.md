@@ -7,21 +7,21 @@
 <li>4GB Ram</li>
 <li>20GB Disk Space</li>
 <li>A VPS/VM or Dedicated Server</li>
-<li>your Domain or buy a new namecheap</li>
-<li>Cloudflare account free tier</li>
+<li>An existing domain or buy a new one from namecheap</li>
+<li>Cloudflare account free tier <a href=https://www.cloudflare.com/en-gb/plans/free/>SignUp</a></li>
 </ol>
 
-### PRE INSTALLATION 
-To Begin your journey with Sudobox.io and execute the installation process you can run the command below :
+### PRE-INSTALLATION 
+To begin your journey with Sudobox.io and execute the installation process you can type or paste the command below:
 
 ``` curl -fsSl https://raw.githubusercontent.com/sudobox-io/sb-install/master/install.sh | sudo bash ```
 
 ![SudoBox Preinstaller!](./sb-installer.png "SB-preinstaller")
 
 ### NOTICE 
-Sudobox is still currently under development and all documentation,images & code are subject to change. 
+Sudobox is underway with features to be added on a weekly basis therefore all documentation, container images and code are subject to change. 
 
 ### Support 
-Looking for more inforamtion please visit our docs <a href="https://docs.sudobox.io">https://docs.sudobox.io</a>
+Looking for more information please visit our docs <a href="https://docs.sudobox.io">https://docs.sudobox.io</a>
 
 If you are looking for help our discord and Forum members are ready to lend a Hand..  <a href="https://sudobox.io">Sudobox</a>
