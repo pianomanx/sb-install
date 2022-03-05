@@ -1,4 +1,5 @@
-# sb-installer
+# SudoBox Installer
+
 To Begin your journey with Sudobox.io and execute the installation process you can run the command below :
 
 ``` curl -fsSl https://raw.githubusercontent.com/sudobox-io/sb-install/master/install.sh | sudo bash ```
