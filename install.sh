@@ -123,7 +123,7 @@ services:
       - "/opt/sudobox/appdata:/appdata"
       - "/opt/sudobox/configs:/configs"
       - "/opt/sudobox/compose:/compose"
-      - "~/.docker:~/.docker"
+      - "/root/.docker:/root./docker"
     networks:
       - sudobox_private
     depends_on:
