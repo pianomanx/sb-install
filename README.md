@@ -16,6 +16,14 @@ To begin your journey with Sudobox.io and execute the installation process you c
 
 ``` curl -fsSl https://raw.githubusercontent.com/sudobox-io/sb-install/master/install.sh | sudo bash ```
 
+have the following information handy to speed up your installation: 
+
+<ol>
+<li>Cloudflare Email</li>
+<li>Cloudflare API Token --> learn to make one here. <a href=https://developers.cloudflare.com/api/tokens/create//>API Tokens</a></li>
+<li>Cloudflare Global API --> Find it here. <a href=https://developers.cloudflare.com/api/keys/#view-your-api-key/>Global API</a></li>
+</ol>
+
 ![SudoBox Preinstaller!](./sb-installer.png "SB-preinstaller")
 
 ### NOTICE 
