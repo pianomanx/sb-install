@@ -1,14 +1,15 @@
 # SudoBox Installer
 
 ## Minimum Specs and Requirements
-Stable: Ubuntu 18/20/21 or Debian 9/10/11
-CPU 2 Cores or 2 VCores
-4GB Ram
-20GB Disk Space
-A VPS/VM or Dedicated Server
-your Domain or buy a new namecheap
-Cloudflare account free tier
-
+<ol>
+<li>Stable: Ubuntu 18/20/21 or Debian 9/10/11</li>
+<li>CPU 2 Cores or 2 VCores</li>
+<li>4GB Ram</li>
+<li>20GB Disk Space</li>
+<li>A VPS/VM or Dedicated Server</li>
+<li>your Domain or buy a new namecheap</li>
+<li>Cloudflare account free tier</li>
+</ol>
 ## PRE INSTALLATION 
 To Begin your journey with Sudobox.io and execute the installation process you can run the command below :
 
