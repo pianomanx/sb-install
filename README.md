@@ -2,7 +2,7 @@
 
 ### Minimum Specs and Requirements
 <ol>
-<li>Stable: Ubuntu 18/20/21 or Debian 9/10/11</li>
+<li>Stable: Ubuntu 18/20/21</li>
 <li>CPU 2 Cores or 2 VCores</li>
 <li>4GB Ram</li>
 <li>20GB Disk Space</li>
