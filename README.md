@@ -10,6 +10,7 @@
 <li>your Domain or buy a new namecheap</li>
 <li>Cloudflare account free tier</li>
 </ol>
+
 ## PRE INSTALLATION 
 To Begin your journey with Sudobox.io and execute the installation process you can run the command below :
 
