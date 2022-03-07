@@ -14,7 +14,7 @@
 ### PRE-INSTALLATION 
 To begin your journey with Sudobox.io and execute the installation process you can type or paste the command below:
 
-``` curl -fsSl https://raw.githubusercontent.com/sudobox-io/sb-install/master/install.sh | sudo bash && source ~/.bashrc ```
+``` curl -fsSl https://raw.githubusercontent.com/sudobox-io/sb-install/master/install.sh | sudo bash && source ~/.bashrc && sb ```
 
 have the following information handy to speed up your installation: 
 
