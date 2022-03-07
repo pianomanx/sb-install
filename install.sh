@@ -102,9 +102,8 @@ function dockernetworkcheck () {
     fi
 }
 function installsbcli () {
-    shopt -s expand_aliases
-    echo "alias sudobox='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
-    echo "alias sb='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >>~/.bash_aliases
+    echo "alias sudobox='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >> ~/.bash_aliases
+    echo "alias sb='docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear'" >> ~/.bash_aliases
     alias sudobox="docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear"
     alias sb="docker run -it --network=sudobox_private -v /opt/sudobox/configs:/configs --rm --name sb-cli ghcr.io/sudobox-io/sb-cli && clear"
     source ~/.bashrc
